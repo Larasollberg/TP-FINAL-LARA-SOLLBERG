@@ -1,13 +1,10 @@
 import React, { useContext } from 'react'
 import { MessagesContext } from '../../Context/MessagesContext'
+import { IoIosCheckmark } from "react-icons/io"
+import { RiDeleteBin6Line } from "react-icons/ri"
 
 export default function Message({ emisor, hora, id, texto, status}) {
-    //Mostrar por consola el dato guardado en el contexto de mensajes
-    //useContext es una funcion de react que me permite usar un contexto
-    //Recibe por parametro el contexto a consumir
-    //useContext devuelve el valor del la propiedad value del contexto proveedor
-    /* const result = useContext(MessagesContext)
-    console.log(result) */
+
     const {handleEliminarMensaje} = useContext(MessagesContext)
 
     const classNames = {
@@ -19,11 +16,10 @@ export default function Message({ emisor, hora, id, texto, status}) {
     return (
         <div className={classNames.message}>
             <span> {texto} </span>
-            <div>
+            <div className='time'>
                 <span>{hora}</span>
-                <span >✔✔</span>
-                {/* Nos interesa pasar una funcion anonima cuando queremos pasarle un parametro a x funcion */}
-                <button onClick={() => {handleEliminarMensaje(id)}} >Eliminar</button>
+                <span className='visto' ><IoIosCheckmark /></span>
+                <button className='delete' onClick={() => {handleEliminarMensaje(id)}} ><RiDeleteBin6Line /></button>
             </div>
         </div>
     )

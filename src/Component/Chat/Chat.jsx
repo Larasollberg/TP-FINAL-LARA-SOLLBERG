@@ -6,13 +6,13 @@ export default function Chat() {
     const {messages} = useContext(MessagesContext)
     if(messages.length === 0){
         return (
-            <div>
-                <span>No hay mensajes!</span>
+            <div className='no-messages'>
+                <span>¡No tienes mensajes pendientes!</span>
             </div>
         )
     }
     return (
-        <div>
+        <div className='chat-container'>
             {
                 messages.map((message) => {
                     return (

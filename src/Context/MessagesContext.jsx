@@ -37,8 +37,6 @@ const MessagesContextProvider = ({ children }) => {
 
     const loadMessages = (contact_id) => {
         setIsMessagesLoading(true)
-
-        
         setTimeout(
             () => {
                 const messages = getMessagesByContactId(contact_id)

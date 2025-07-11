@@ -11,11 +11,12 @@ const ContactsList = () => {
         )
     }
     return (
-        <div>
+        <div className="contact-card">
             {
                 contacts.map(
                     (contact) => {
-                        return <ContactItem
+                        return <div className="ContactItem">
+                            <ContactItem
                             key={contact.id}
                             id={contact.id}
                             name={contact.name}
@@ -24,7 +25,7 @@ const ContactsList = () => {
                             last_message={contact.last_message}
                             unread_messages={contact.unread_messages}
                         />
-                        /* O mas facil <ContactItem key={contact.id} {...contact}/> */
+                        </div>
                     }
                 )
             }

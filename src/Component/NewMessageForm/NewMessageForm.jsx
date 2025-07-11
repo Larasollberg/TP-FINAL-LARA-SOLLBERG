@@ -1,26 +1,22 @@
 import React, { useContext } from 'react'
 import { MessagesContext } from '../../Context/MessagesContext'
+import { LuSend } from "react-icons/lu"
 
 export default function NewMessageForm() {
-    /* const result = useContext(MessagesContext)
-    alert(result.dato) */
+    
     const {addNewMessage} = useContext(MessagesContext)
     const handleSubmitNewMessage = (e) => {
-        //Esta funcion se encarga de manejar el envio del formulario
         e.preventDefault()
         let new_text = e.target.text.value
         addNewMessage(new_text)
-        e.target.text.value = '' //Borrar el mensaje enviado del formulario
-        //Otra forma de resetar el form
-        //e.target.reset()
+        e.target.text.value = '' 
     }
     return (
-        <form onSubmit={handleSubmitNewMessage}>
-            <div>
-                <label htmlFor="text">Nuevo mensaje:</label>
-                <textarea id='text' name='text' minLength={5} required ></textarea>
+        <form  className='new-form'  onSubmit={handleSubmitNewMessage}>
+            <div className='new-message'>
+                <textarea className='text' id='text' name='text' minLength={2} required ></textarea>
+                <button className='enviar' type='submit'><LuSend /></button>
             </div>
-            <button type='submit'>Enviar mensaje</button>
         </form>
     )
 }

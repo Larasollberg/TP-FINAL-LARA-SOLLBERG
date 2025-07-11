@@ -6,22 +6,30 @@ import Swal from 'sweetalert2'
 import { Link, useParams } from 'react-router';
 import { MessagesContext } from '../../Context/MessagesContext';
 import LoaderSpinner from '../../Component/LoaderSpinner/LoaderSpinner';
+import ContactContextProvider  from '../../Context/ContactContext';
+import mook_data from '../../data/contact-mook';
+import { ContactDetailContext } from '../../Context/ContactDetailContext';
+
+
+
+
 
 export default function HomeScreen() {
 
     
     const {contact_id} = useParams()
-    const {loadMessages, isMessagesLoading} = useContext(MessagesContext)
-
-    
+    const { loadMessages, isMessagesLoading} = useContext(MessagesContext)  
+    const {loadContact, contact_detail, isLoadingContactDetail } = useContext(ContactDetailContext) 
     useEffect(
         () => {
             loadMessages(contact_id)
+            loadContact(contact_id)
         },
         [contact_id]
     )
+    console.log(contact_detail)
 
-    if(isMessagesLoading){
+    if(isMessagesLoading || isLoadingContactDetail){
         return <LoaderSpinner/>
     }
     const handleClickAlertButton = () => {
@@ -32,17 +40,23 @@ export default function HomeScreen() {
 			confirmButtonText: 'Cool'
 		})
 	}
+    
 
     return (
-        <div>
-            <Link to={`/contacts/${contact_id}/detail`}>Ir a detalle de contacto</Link>
-            <h3>
-                Lets go for a <IoIosBody />?
-            </h3>
-            <button onClick={handleClickAlertButton}>alerta bonita</button>
+        <div className='chat-screen-contact'>
+            <div className='contact-info'>
+            <Link className='detail' to={`/contacts/${contact_id}/detail`}>
+            <div className='detail-name'>{contact_detail.name}</div>
+            <div className='detail-connected'>Ultima Conexión  {contact_detail.last_time_connected}</div>
+            </Link>
+            </div>
             <Chat />
             <NewMessageForm/>
+
         </div>
         
     )
+
 }
+
+
