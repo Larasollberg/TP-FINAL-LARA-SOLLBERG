@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'DM Sans', sans-serif;
+    text-decoration: none;
 }
 :root {
     --whatsapp-bg-main: #222e35; 
@@ -168,6 +169,7 @@ input:focus {
     overflow: hidden;
     justify-content: space-between;
     min-width: 50vw;
+    text-decoration: none;
 }
 
 .Chat-items { 
@@ -190,6 +192,7 @@ input:focus {
 
 .Chat-items:hover {
     background-color: var(--whatsapp-hover-bg);
+    text-decoration: none;
 
 }
 
@@ -405,6 +408,8 @@ input:focus {
 .nav-link:hover {
     opacity: 0.8;
 }
+
+
 
 
 @media (max-width: 768px) {
