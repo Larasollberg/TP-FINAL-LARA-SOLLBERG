@@ -56,9 +56,10 @@ html, body, #root {
 
 .whatsapp-container {
     display: flex;
-    flex: 1; 
+    flex: 1;
+    flex-grow: 1; 
     background-color: var(--whatsapp-bg-chat); 
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .main-layout {
@@ -124,12 +125,10 @@ html, body, #root {
     flex: 1;
     overflow-y: auto; 
     padding: var(--spacing-m);
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719142-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); /* Fondo de chat de WhatsApp */
-    background-size: cover;
-    background-position: center;
     display: flex;
     flex-direction: column; 
     justify-content: flex-end; 
+    width: 100%;
 }
 
 button:focus,
@@ -157,11 +156,26 @@ input:focus {
     
 }
 
+
+.Chat-items-container { 
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-xs);
+    background-color: transparent;
+    border-color: var(--whatsapp-text-medium);
+    flex-grow: 1;
+    margin-left: var(--spacing-s);
+    overflow: hidden;
+    justify-content: space-between;
+    min-width: 50vw;
+}
+
 .Chat-items { 
     display: flex;
     flex-direction: row;
+    flex: content;
     background-color: var(--whatsapp-bg-chat);
-    border-radius: 5px;
+    border-radius: 10px;
     align-items: center;
     padding: var(--spacing-s) var(--spacing-m);
     justify-content: space-between;
@@ -169,11 +183,14 @@ input:focus {
     text-decoration: none;
     margin: var(--spacing-s) 0;
     border: 1px solid var(--whatsapp-text-medium);
-    box-shadow: 5px 5px var(--whatsapp-text-medium);
+    box-shadow: 2px 2px var(--whatsapp-text-medium);
     transition: background-color 0.2s ease;
 }
+
+
 .Chat-items:hover {
     background-color: var(--whatsapp-hover-bg);
+
 }
 
 .Profile-Pic-Container { 
@@ -190,17 +207,7 @@ input:focus {
     display: block;
 }
 
-.Chat-items-container { 
-    display: flex;
-    flex-direction: column;
-    padding: var(--spacing-xs);
-    background-color: transparent;
-    
-    border-color: var(--whatsapp-text-medium);
-    flex-grow: 1;
-    margin-left: var(--spacing-s);
-    overflow: hidden;
-}
+
 
 .ContactItem { 
     display: flex;

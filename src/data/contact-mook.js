@@ -4,11 +4,11 @@ const mook_data = {
             {
                 id: 1,
                 name: 'Agus',
-                last_time_connected: 'En linea',
+                last_time_connected: '13:24',
                 img:"https://www.telehit.com/_next/image?url=https%3A%2F%2Fst1.uvnimg.com%2Fca%2F9c%2F152fb5ceca23f3567b03142068b2%2Fnina-coreana.jpg&w=640&q=75",
                 last_message: {
                     id: 1,
-                    text: 'Gorda, que comemos hoy?'
+                    text: 'Que comemos hoy?'
                 },
                 unread_messages: 1,
                 messages: [
@@ -43,14 +43,14 @@ const mook_data = {
             },
             {
                 id: 3,
-                name: 'Yas',
+                name: 'Yasmin',
                 last_time_connected: '17:19',
                 img: "https://www.fmdos.cl/wp-content/uploads/2021/07/rohee2-1024x1009.jpg",
                 last_message: {
                     id: 1,
-                    text: 'Amigaaa'
+                    text: 'Amigaaa, como estas?'
                 },
-                unread_messages: 20,
+                unread_messages: 1,
                 messages: [
                     {
                         emisor: 'YO',
@@ -63,12 +63,12 @@ const mook_data = {
             },
             {
                 id: 4,
-                name: 'Bren Rosales',
+                name: 'Bren',
                 last_time_connected: '15:19',
                 img: "https://www.sopitas.com/wp-content/uploads/2021/09/rohee-nina-coreana-whatsapp.jpeg",
                 last_message: {
                     id: 1,
-                    text: 'No quiero trabajar mas 😖'
+                    text: 'Me quiero ir 😖'
                 },
                 unread_messages: 0,
                 messages: [
@@ -83,12 +83,12 @@ const mook_data = {
             },
             {
                 id: 5,
-                name: 'Programacion Full Stack',
+                name: 'Perla',
                 last_time_connected: '15:19',
                 img: "https://mtpnoticias.com/wp-content/uploads/2021/09/nina_coreana-e1631489838673.jpg",
                 last_message: {
                     id: 1,
-                    text: 'Como vienen con el TP?'
+                    text: 'Hola Amiga!'
                 },
                 unread_messages: 0,
                 messages: [
